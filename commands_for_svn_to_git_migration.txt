@@ -1,0 +1,82 @@
+  113  svnadmin create /home/ubuntu/svn_repo
+  114  ls svn_repo/
+  115  mkdir -p my_project/{trunk,branches,tags}
+  116  ls
+  117  cd my_project/
+  118  cd ..
+  119  svn import my_project file:///home/ubuntu/svn_repo -m "Initial import"
+  120  svn list
+  121  pwd
+  122  svn list
+  123  cd my_project/
+  124  svn list
+  125  cd ..
+  126  ls
+  127  cd svn_repo/
+  128  svn list
+  129  cd
+  130  svn list
+  131  svn --version
+  132  svn list
+  133  ls
+  134  ls -a
+  135  cd my_project/
+  136  ls
+  137  cd ../..
+  138  cd
+  139  pwd
+  140  svn checkout file:///home/ubuntu/svn_repo/trunk my_project
+  141  cd my_project/
+  142  svn list
+  143  echo "Hello SVN!" > file1.txt
+  144  echo "This is another test file." > file2.txt
+  145  svn status
+  146  svn add file1.txt file2.txt 
+  147  svn commit -m "Initial commit: Added file1.txt, file2.txt"
+  148  svn log
+  149  echo "New line added to file1.txt" >> file1.txt
+  150  svn status
+  151  svn commit -m "Updated file1.txt with a new line"
+  152  svn copy file:///home/ubuntu/svn_repo/trunk file:///home/ubuntu/svn_repo/branches/feature-branch -m "Creating feature branch"
+  153  svn list
+  154  svn checkout feature-branch my_feature_branch
+  155  svn checkout file:///home/ubuntu/svn_repo/branches/feature-branch my_feature_branch
+  156  cd my_feature_branch
+  157  echo "Feature branch work" >> file1.txt
+  158  svn commit -m "Updated file1.txt in feature branch"
+  159  sudo apt install git git-svn
+  160  svn info
+  161  cd ..
+  162  svn info
+  163  git svn clone file:///home/ubuntu/svn_repo --stdlayout --no-metadata git-migration
+  164  cd git-migration/
+  165  git log --oneline
+  166  ls -al ~/.ssh
+  167  ssh-keygen -t rsa -b 4096 -C "ashutoshsanghi3@gmail.com"
+  168  eval "$(ssh-agent -s)"
+  169  ssh-add ~/.ssh/id_rsa
+  170  cat ~/.ssh/id_rsa.pub
+  171  ssh -T git@github.com
+  172  git@github.com:ashutoshsanghi3/svn-git-migration.git
+  173  ls
+  174  cd ..
+  175  ls
+  176  cd git-migration/
+  177  ls
+  178  git clone git@github.com:ashutoshsanghi3/svn-git-migration.git
+  179  ls
+  180  rm -rf svn-git-migration/
+  181  git remote add origin git@github.com:ashutoshsanghi3/svn-git-migration.git
+  182  ls
+  183  git status
+  184  git log --oneline
+  185  git push -u origin main
+  186  cd ..
+  187  git push -u origin main
+  188  cd git-migration/
+  189  ls
+  190  git log --oneline
+  191  git remote set-url origin git@github.com:ashutoshsanghi3/svn-git-migration.git
+  192  git push --set-upstream origin master
+  193  git log --oneline
+  194  history
